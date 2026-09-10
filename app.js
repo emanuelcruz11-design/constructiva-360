@@ -118,3 +118,6 @@ document.querySelectorAll('.catalog-btn').forEach(btn=>btn.addEventListener('cli
 }));
 const oldClose=document.getElementById('closeModal').onclick;
 document.getElementById('closeModal').onclick=()=>{document.getElementById('modal').classList.remove('show');document.querySelector('.modal-card').classList.remove('catalog-modal')};
+
+// Limpia clase visual del modal al cerrar con clic externo
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal'){document.querySelector('.modal-card').classList.remove('catalog-modal')}});

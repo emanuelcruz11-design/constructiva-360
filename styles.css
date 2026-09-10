@@ -72,3 +72,44 @@ footer{display:flex;justify-content:space-between;padding:26px 7vw;background:#0
 .chart-card{height:390px;min-height:390px;position:relative;overflow:hidden}
 .chart-card canvas{display:block!important;width:100%!important;height:310px!important;max-height:310px!important}
 @media(max-width:900px){.chart-card{height:360px;min-height:360px}.chart-card canvas{height:285px!important;max-height:285px!important}}
+
+
+/* ===== Visual upgrade · imágenes reales ===== */
+.image-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.system-thumb{height:250px;background-size:cover;background-position:center;position:relative}
+.system-thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,18,.78),rgba(8,12,18,.06) 52%,rgba(8,12,18,.18))}
+.system-body{padding:26px 28px 28px;background:#fff;position:relative;z-index:1}
+.tag.floating{position:absolute;left:18px;top:18px;z-index:2;background:rgba(7,9,13,.74);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;color:#fff;border:1px solid rgba(255,255,255,.12)}
+.st1{background-image:url('assets/sistema-tradicional.png')}
+.st2{background-image:url('assets/sistema-gypsum.png')}
+.st3{background-image:url('assets/sistema-prefabricado.png')}
+.system-card h3{font-size:30px}
+.system-card p{margin-top:10px}
+.system-card.featured{transform:translateY(-8px);box-shadow:0 20px 40px rgba(249,115,22,.12)}
+
+/* Catálogo y proyectos con imágenes realistas */
+.c1:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/casa-urbana.png')}
+.c2:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/casa-premium.png')}
+.c3:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/local-comercial.png')}
+.c4:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/bodega.png')}
+.c5:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/oficinas.png')}
+.c6:before{background-image:linear-gradient(to top,rgba(3,5,8,.26),rgba(3,5,8,.02)),url('assets/condominio.png')}
+.pv1{background-image:linear-gradient(180deg,rgba(6,8,12,.08),rgba(6,8,12,.72)),url('assets/residencia-c360.png');background-size:cover;background-position:center}
+.mv1{background-image:url('assets/centro-comercial.png');background-size:cover;background-position:center}
+.mv2{background-image:url('assets/oficinas-c360.png');background-size:cover;background-position:center}
+.mv3{background-image:url('assets/vivienda-compacta.png');background-size:cover;background-position:center}
+
+/* Ajuste visual cards */
+.catalog-card{min-height:380px}
+.mini-visual{height:200px}
+.project-feature{box-shadow:0 22px 70px rgba(0,0,0,.16)}
+.project-visual,.mini-visual,.catalog-card:before,.system-thumb{filter:saturate(1.03) contrast(1.03)}
+
+/* Modal limpio en visual oscuro */
+.modal-card.catalog-modal .modal-panel{background:#121720;border:1px solid rgba(255,255,255,.06)}
+.modal-card.catalog-modal .close{background:#1a2230;color:#fff}
+
+@media(max-width:900px){
+  .system-thumb{height:220px}
+  .system-card.featured{transform:none}
+}

@@ -1,28 +1,18 @@
-# Constructiva 360
+# Constructiva 360 · Visual Ready
 
-Sitio web académico-profesional para comparar tres sistemas constructivos:
+Versión lista para actualizar en GitHub/Render con:
 
-- Sistema tradicional
-- Acero + Gypsum
-- Prefabricado de concreto
-
-## Funciones
-- Simulador de área del proyecto
-- Cálculo estimado de costo, plazo y horas-hombre
-- Dashboard con Chart.js
-- Radar técnico
-- Recomendador por prioridad
-- Fichas técnicas por sistema
-- Caso de estudio de 100 m²
-- Modo impresión / informe
+- Imágenes realistas para los 3 sistemas constructivos.
+- Catálogo con imágenes arquitectónicas premium.
+- Proyecto destacado y mini proyectos con imágenes reales.
+- Dashboard corregido para que los gráficos no se deformen.
+- Diseño coherente con la línea visual negro + naranja de las historias.
 
 ## Publicación en Render
-1. Subir estos archivos a un repositorio de GitHub.
-2. En Render: New > Static Site.
-3. Conectar el repositorio.
-4. Build Command: dejar vacío.
-5. Publish Directory: `.`
-6. Deploy.
+1. Sustituir los archivos actuales por los de esta carpeta.
+2. Subir a GitHub.
+3. En Render: redeploy del Static Site.
+4. Publish Directory: `.`
 
-## Nota
-Los costos, tiempos y horas-hombre son un modelo académico comparativo y no constituyen una cotización comercial definitiva.
+## Importante
+Las imágenes se encuentran dentro de `assets/` y ya están conectadas en `styles.css`.

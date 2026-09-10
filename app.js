@@ -100,3 +100,21 @@ document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('cli
 }));
 document.getElementById('closeModal').onclick=()=>document.getElementById('modal').classList.remove('show');
 document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('show')});
+
+const catalogData={
+  'Casa Urbana 120':{type:'Vivienda',area:'120 m²',system:'Acero + Gypsum / Prefabricado',desc:'Vivienda compacta contemporánea con distribución eficiente, pensada para familias pequeñas y lotes urbanos.',features:['2 habitaciones','2 baños','Sala-comedor integrada','Cocina abierta','Área de lavado']},
+  'Casa Premium 180':{type:'Vivienda',area:'180 m²',system:'Tradicional / Prefabricado',desc:'Propuesta residencial de mayor escala con zonas sociales amplias y acabados de mayor especificación.',features:['3 habitaciones','2.5 baños','Terraza','Cochera doble','Área social integrada']},
+  'Local Comercial 250':{type:'Comercial',area:'250 m²',system:'Acero + Gypsum',desc:'Espacio comercial flexible para adaptar divisiones, instalaciones y acabados según operación.',features:['Planta libre','Servicios sanitarios','Bodega','Área de atención','Fachada comercial']},
+  'Bodega Modular 400':{type:'Industrial',area:'400 m²',system:'Prefabricado / Acero',desc:'Solución para almacenamiento y operación con prioridad en rapidez de montaje y posibilidad de expansión.',features:['Nave principal','Andén de carga','Área administrativa','Servicios','Expansión modular']},
+  'Oficinas Flex 300':{type:'Corporativo',area:'300 m²',system:'Acero + Gypsum',desc:'Oficinas con alto nivel de flexibilidad para cambios de distribución y crecimiento futuro.',features:['Open office','Salas de reunión','Recepción','Cafetería','Cuartos técnicos']},
+  'Condominio Modular':{type:'Residencial',area:'Escalable',system:'Prefabricado',desc:'Modelo repetitivo pensado para proyectos residenciales por etapas, con control de tiempos y estandarización.',features:['Unidades modulares','Áreas comunes','Crecimiento por etapas','Estandarización','Control de calidad']}
+};
+document.querySelectorAll('.catalog-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  const d=catalogData[btn.dataset.catalog];
+  const modal=document.getElementById('modal');
+  document.querySelector('.modal-card').classList.add('catalog-modal');
+  document.getElementById('modalContent').innerHTML=`<span class="eyebrow">CATÁLOGO C360 · ${d.type.toUpperCase()}</span><h2>${btn.dataset.catalog}</h2><p>${d.desc}</p><div class="modal-grid"><div class="modal-panel"><h3>Ficha rápida</h3><p><b>Área:</b> ${d.area}</p><p><b>Sistema sugerido:</b> ${d.system}</p></div><div class="modal-panel"><h3>Incluye</h3><ul>${d.features.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div style="margin-top:20px"><a class="btn primary" href="#simulador" onclick="document.getElementById('modal').classList.remove('show')">Evaluar este tipo de proyecto</a></div>`;
+  modal.classList.add('show');
+}));
+const oldClose=document.getElementById('closeModal').onclick;
+document.getElementById('closeModal').onclick=()=>{document.getElementById('modal').classList.remove('show');document.querySelector('.modal-card').classList.remove('catalog-modal')};

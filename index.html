@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Constructiva 360 - Comparador profesional de sistemas constructivos: tradicional, acero + gypsum y prefabricado."/>
+  <title>Constructiva 360 | Sistema Óptimo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">C360</div>
+    <div>
+      <strong>Constructiva 360</strong>
+      <span>Consultoría & Selección de Sistemas</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#sistemas">Sistemas</a>
+    <a href="#simulador">Simulador</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#recomendador">Recomendador</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">ANÁLISIS TÉCNICO · ECONÓMICO · CONSTRUCTIVO</span>
+    <h1>No existe un único sistema ideal.<br><em>Existe el sistema correcto para cada proyecto.</em></h1>
+    <p>Comparamos costo, tiempo, mano de obra, productividad, flexibilidad y desempeño para ayudarte a tomar una decisión constructiva con criterio técnico.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#simulador">Evaluar mi proyecto</a>
+      <a class="btn ghost" href="#dashboard">Ver comparativa</a>
+    </div>
+    <div class="hero-kpis">
+      <div><b>3</b><span>Sistemas evaluados</span></div>
+      <div><b>12+</b><span>Criterios técnicos</span></div>
+      <div><b>100%</b><span>Comparación interactiva</span></div>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="panel-badge">Caso base · 100 m²</div>
+    <h3>Resumen ejecutivo</h3>
+    <div class="mini-row"><span>Menor costo estimado</span><b>Prefabricado</b></div>
+    <div class="mini-row"><span>Mayor flexibilidad</span><b>Acero + Gypsum</b></div>
+    <div class="mini-row"><span>Mayor robustez percibida</span><b>Tradicional</b></div>
+    <div class="score">
+      <span>Índice general del modelo</span>
+      <strong>4.65 / 5</strong>
+      <small>Prefabricado</small>
+    </div>
+  </div>
+</section>
+
+<section id="sistemas" class="section">
+  <div class="section-head">
+    <span class="eyebrow">PORTAFOLIO CONSTRUCTIVO</span>
+    <h2>Tres soluciones. Tres estrategias.</h2>
+    <p>Cada sistema se analiza bajo el mismo proyecto para evitar comparaciones sesgadas.</p>
+  </div>
+  <div class="system-grid">
+    <article class="system-card">
+      <span class="tag">01 · Convencional</span>
+      <h3>Sistema Tradicional</h3>
+      <p>Concreto reforzado, mampostería y procesos húmedos ejecutados principalmente en sitio.</p>
+      <div class="metric"><span>Costo base</span><b>₡345.000/m²</b></div>
+      <div class="metric"><span>Plazo base</span><b>110 días</b></div>
+      <div class="metric"><span>Horas-hombre</span><b>6.160 HH</b></div>
+      <div class="bar"><i style="width:58%"></i></div>
+      <button class="linkbtn" data-modal="tradicional">Ver análisis completo →</button>
+    </article>
+    <article class="system-card featured">
+      <span class="tag">02 · Liviano</span>
+      <h3>Acero + Gypsum</h3>
+      <p>Estructura metálica combinada con cerramientos livianos, modulares y de rápida ejecución.</p>
+      <div class="metric"><span>Costo base</span><b>₡285.000/m²</b></div>
+      <div class="metric"><span>Plazo base</span><b>75 días</b></div>
+      <div class="metric"><span>Horas-hombre</span><b>3.000 HH</b></div>
+      <div class="bar"><i style="width:83%"></i></div>
+      <button class="linkbtn" data-modal="gypsum">Ver análisis completo →</button>
+    </article>
+    <article class="system-card">
+      <span class="tag">03 · Industrializado</span>
+      <h3>Prefabricado</h3>
+      <p>Elementos producidos bajo condiciones controladas y montados posteriormente en obra.</p>
+      <div class="metric"><span>Costo base</span><b>₡273.000/m²</b></div>
+      <div class="metric"><span>Plazo base</span><b>60 días</b></div>
+      <div class="metric"><span>Horas-hombre</span><b>1.920 HH</b></div>
+      <div class="bar"><i style="width:93%"></i></div>
+      <button class="linkbtn" data-modal="prefabricado">Ver análisis completo →</button>
+    </article>
+  </div>
+</section>
+
+<section id="simulador" class="section split">
+  <div>
+    <span class="eyebrow">SIMULADOR DE PROYECTO</span>
+    <h2>¿Cuánto cambia la decisión según el tamaño de obra?</h2>
+    <p>Modifica el área y obtén una proyección instantánea de costo, plazo y mano de obra. Los valores corresponden a un modelo académico comparativo.</p>
+    <div class="formbox">
+      <label>Área del proyecto <b id="areaLabel">100 m²</b></label>
+      <input id="area" type="range" min="50" max="500" step="10" value="100"/>
+      <div class="range-labels"><span>50 m²</span><span>500 m²</span></div>
+    </div>
+  </div>
+  <div class="results-grid">
+    <div class="result-card" data-system="trad">
+      <span>Tradicional</span>
+      <strong id="costTrad">₡34,50 M</strong>
+      <small id="daysTrad">110 días · 6.160 HH</small>
+    </div>
+    <div class="result-card" data-system="gyp">
+      <span>Acero + Gypsum</span>
+      <strong id="costGyp">₡28,50 M</strong>
+      <small id="daysGyp">75 días · 3.000 HH</small>
+    </div>
+    <div class="result-card best" data-system="pref">
+      <span>Prefabricado</span>
+      <strong id="costPref">₡27,30 M</strong>
+      <small id="daysPref">60 días · 1.920 HH</small>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" class="section dark">
+  <div class="section-head">
+    <span class="eyebrow">DASHBOARD EJECUTIVO</span>
+    <h2>La decisión, vista en números.</h2>
+    <p>Comparación visual del caso base de 100 m².</p>
+  </div>
+  <div class="dash-grid">
+    <div class="chart-card"><h3>Costo total estimado</h3><canvas id="costChart"></canvas></div>
+    <div class="chart-card"><h3>Duración del proyecto</h3><canvas id="timeChart"></canvas></div>
+    <div class="chart-card"><h3>Horas-hombre</h3><canvas id="hhChart"></canvas></div>
+    <div class="chart-card"><h3>Perfil técnico comparativo</h3><canvas id="radarChart"></canvas></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="eyebrow">COSTO DEL TIEMPO</span>
+    <h2>Terminar antes también tiene valor.</h2>
+    <p>Una obra más rápida puede reducir supervisión, administración, alquileres temporales y exposición al riesgo.</p>
+  </div>
+  <div class="savings">
+    <div><span>Acero + Gypsum</span><b>35 días menos</b><small>≈ 31,8% de reducción</small></div>
+    <div><span>Prefabricado</span><b>50 días menos</b><small>≈ 45,5% de reducción</small></div>
+  </div>
+</section>
+
+<section id="recomendador" class="section recommender">
+  <div>
+    <span class="eyebrow">SELECTOR INTELIGENTE</span>
+    <h2>¿Cuál sistema se ajusta mejor a tu prioridad?</h2>
+    <p>Selecciona lo que más importa en el proyecto. El modelo recomendará una alternativa y explicará el criterio.</p>
+  </div>
+  <div class="recom-box">
+    <select id="priority">
+      <option value="balance">Mejor equilibrio general</option>
+      <option value="cost">Menor costo</option>
+      <option value="time">Menor plazo</option>
+      <option value="flex">Mayor flexibilidad</option>
+      <option value="durability">Mayor robustez y durabilidad</option>
+      <option value="labor">Menor uso de mano de obra</option>
+    </select>
+    <button id="recommendBtn" class="btn primary">Generar recomendación</button>
+    <div id="recommendation" class="recommendation">
+      <span>Recomendación inicial</span>
+      <h3>Prefabricado</h3>
+      <p>Obtiene el mejor puntaje global del modelo gracias a su combinación de costo, plazo y productividad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section case-study">
+  <div>
+    <span class="eyebrow">CASO DE ESTUDIO · 100 m²</span>
+    <h2>Comparación final</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Indicador</th><th>Tradicional</th><th>Acero + Gypsum</th><th>Prefabricado</th></tr></thead>
+      <tbody>
+        <tr><td>Costo</td><td>₡34,50 M</td><td>₡28,50 M</td><td>₡27,30 M</td></tr>
+        <tr><td>Costo/m²</td><td>₡345.000</td><td>₡285.000</td><td>₡273.000</td></tr>
+        <tr><td>Duración</td><td>110 días</td><td>75 días</td><td>60 días</td></tr>
+        <tr><td>Horas-hombre</td><td>6.160</td><td>3.000</td><td>1.920</td></tr>
+        <tr><td>Productividad</td><td>0,016 m²/HH</td><td>0,033 m²/HH</td><td>0,052 m²/HH</td></tr>
+        <tr><td>Flexibilidad</td><td>Alta</td><td>Muy alta</td><td>Media</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="cta">
+  <span class="eyebrow">CONCLUSIÓN EJECUTIVA</span>
+  <h2>La mejor solución no es siempre la más barata.<br>Es la que genera mayor valor para el proyecto.</h2>
+  <p>Constructiva 360 transforma criterios técnicos en una decisión clara, medible y defendible.</p>
+  <button class="btn light" onclick="window.print()">Generar informe / imprimir</button>
+</section>
+</main>
+
+<footer>
+  <div><strong>Constructiva 360</strong><span>Proyecto académico · Construcción Avanzada</span></div>
+  <div><span>Ingeniería Civil</span><span>2026</span></div>
+</footer>
+
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <button id="closeModal" class="close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

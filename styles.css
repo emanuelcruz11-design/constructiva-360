@@ -54,3 +54,21 @@ footer{display:flex;justify-content:space-between;padding:26px 7vw;background:#0
 .modal-card.catalog-modal{background:#090c11;color:#fff}.modal-card.catalog-modal p,.modal-card.catalog-modal li{color:#c7ced8}
 @media(max-width:1000px){.catalog-grid{grid-template-columns:1fr 1fr}.project-feature{grid-template-columns:1fr}.mini-projects{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.catalog-grid,.mini-projects{grid-template-columns:1fr}.catalog-card{min-height:310px}.project-copy{padding:30px}.project-visual strong{font-size:38px}.project-stats{flex-wrap:wrap}.hero{padding-left:6vw;padding-right:6vw}}
+
+/* ===== Corrección imágenes y dashboards ===== */
+.c1:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/casa-urbana.svg')}
+.c2:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/casa-premium.svg')}
+.c3:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/local-comercial.svg')}
+.c4:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/bodega.svg')}
+.c5:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/oficinas.svg')}
+.c6:before{background-image:linear-gradient(to top,rgba(3,5,8,.20),rgba(3,5,8,.02)),url('assets/condominio.svg')}
+.pv1{background-image:linear-gradient(180deg,rgba(6,8,12,.08),rgba(6,8,12,.68)),url('assets/residencia.svg');background-size:cover;background-position:center}
+.mv1{background-image:url('assets/centro-comercial.svg');background-size:cover;background-position:center}
+.mv2{background-image:url('assets/oficinas-c360.svg');background-size:cover;background-position:center}
+.mv3{background-image:url('assets/vivienda-compacta.svg');background-size:cover;background-position:center}
+
+/* Chart.js necesita una altura real; evita que el canvas crezca indefinidamente */
+.dash-grid{align-items:start}
+.chart-card{height:390px;min-height:390px;position:relative;overflow:hidden}
+.chart-card canvas{display:block!important;width:100%!important;height:310px!important;max-height:310px!important}
+@media(max-width:900px){.chart-card{height:360px;min-height:360px}.chart-card canvas{height:285px!important;max-height:285px!important}}
